@@ -1,6 +1,6 @@
 {
     "name": "kaemmerlingit/laravel-sign-pad",
-    "description": "Laravel package for of E-Signature with Signature Pad and Digital Certified Sign with TCPDF",
+    "description": "Laravel package for of E-Signature with Signature Pad. Privacy friendly (encrypted images) and support for multiple signatures on a single model.",
     "license": "MIT",
     "authors": [
         {
