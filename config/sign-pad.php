@@ -16,5 +16,16 @@ return [
     /**
      * Path where the signature images will be stored.
      */
-    'signatures_path' => 'signatures'
+    'signatures_path' => 'signatures',
+
+    /**
+     * Route name where you want to redirect users after signing.
+     */
+    'redirect_route_name' => null,
+
+    /**
+     * Width and height of the signature rectangle.
+     */
+    'width' => 600,
+    'height' => 200,
 ];
