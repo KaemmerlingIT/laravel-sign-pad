@@ -22,7 +22,7 @@ class LaravelSignPadServiceProvider extends PackageServiceProvider
             ->hasViews('laravel-sign-pad')
             ->hasRoute('web')
             ->hasAssets()
-            ->hasViewComponent('Kaemmerlingit', SignaturePad::class)
+            ->hasViewComponent('kaemmerlingit', SignaturePad::class)
             ->hasMigration('create_signatures_table')
             ->hasCommand(InstallCommand::class);
     }
