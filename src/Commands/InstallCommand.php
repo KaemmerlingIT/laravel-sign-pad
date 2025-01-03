@@ -1,6 +1,6 @@
 <?php
 
-namespace Creagia\LaravelSignPad\Commands;
+namespace Kaemmerlingit\LaravelSignPad\Commands;
 
 use Illuminate\Console\Command;
 
@@ -35,7 +35,7 @@ class InstallCommand extends Command
         }
 
         if ($this->confirm('Would you like to star our repo on GitHub?')) {
-            $repoUrl = 'https://github.com/creagia/laravel-sign-pad';
+            $repoUrl = 'https://github.com/Kaemmerlingit/laravel-sign-pad';
 
             if (PHP_OS_FAMILY == 'Darwin') {
                 exec("open {$repoUrl}");

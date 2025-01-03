@@ -1,6 +1,6 @@
 <?php
 
-namespace Creagia\LaravelSignPad\Tests\TestClasses;
+namespace Kaemmerlingit\LaravelSignPad\Tests\TestClasses;
 
 class TestSignature
 {

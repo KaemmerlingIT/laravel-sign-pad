@@ -5,6 +5,7 @@
             class="{{ $padClasses }}"></canvas>
     <div>
         <input type="hidden" name="sign" class="sign">
+        <input type="hidden" name="part" value="{{$part}}">
         <button type="button" class="sign-pad-button-clear {{$buttonClasses}}">{!! $clearName !!}</button>
         <button type="submit" class="sign-pad-button-submit {{$buttonClasses}}" {{ $disabledWithoutSignature ? 'disabled' : '' }}>{!! $submitName !!}</button>
     </div>

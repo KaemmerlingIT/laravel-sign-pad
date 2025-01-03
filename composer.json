@@ -1,19 +1,17 @@
 {
-    "name": "creagia/laravel-sign-pad",
+    "name": "kaemmerlingit/laravel-sign-pad",
     "description": "Laravel package for of E-Signature with Signature Pad and Digital Certified Sign with TCPDF",
     "license": "MIT",
     "authors": [
         {
-            "name": "creagia",
-            "email": "info@creagia.com"
+            "name": "Lukas Kämmerling",
+            "email": "kontakt@lukas-kaemmerling.de"
         }
     ],
     "require": {
         "php": "^8.0",
         "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0",
-        "spatie/laravel-package-tools": "^1.12.1",
-        "setasign/fpdi": "^v2.0.0",
-        "tecnickcom/tcpdf": "^6.6.0"
+        "spatie/laravel-package-tools": "^1.12.1"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -29,18 +27,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Creagia\\LaravelSignPad\\": "src"
+            "Kaemmerlingit\\LaravelSignPad\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Creagia\\LaravelSignPad\\Tests\\": "tests"
+            "Kaemmerlingit\\LaravelSignPad\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Creagia\\LaravelSignPad\\LaravelSignPadServiceProvider"
+                "Kaemmerlingit\\LaravelSignPad\\LaravelSignPadServiceProvider"
             ]
         }
     },

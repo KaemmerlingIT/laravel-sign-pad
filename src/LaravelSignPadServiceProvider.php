@@ -1,9 +1,9 @@
 <?php
 
-namespace Creagia\LaravelSignPad;
+namespace Kaemmerlingit\LaravelSignPad;
 
-use Creagia\LaravelSignPad\Commands\InstallCommand;
-use Creagia\LaravelSignPad\Components\SignaturePad;
+use Kaemmerlingit\LaravelSignPad\Commands\InstallCommand;
+use Kaemmerlingit\LaravelSignPad\Components\SignaturePad;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -22,7 +22,7 @@ class LaravelSignPadServiceProvider extends PackageServiceProvider
             ->hasViews('laravel-sign-pad')
             ->hasRoute('web')
             ->hasAssets()
-            ->hasViewComponent('creagia', SignaturePad::class)
+            ->hasViewComponent('Kaemmerlingit', SignaturePad::class)
             ->hasMigration('create_signatures_table')
             ->hasCommand(InstallCommand::class);
     }

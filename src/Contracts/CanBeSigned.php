@@ -1,10 +1,10 @@
 <?php
 
-namespace Creagia\LaravelSignPad\Contracts;
+namespace Kaemmerlingit\LaravelSignPad\Contracts;
 
 interface CanBeSigned
 {
     public function getSignatureRoute(): string;
 
-    public function hasBeenSigned(): bool;
+    public function hasBeenSigned(?string $part): bool;
 }

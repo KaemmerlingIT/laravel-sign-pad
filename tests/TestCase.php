@@ -1,8 +1,8 @@
 <?php
 
-namespace Creagia\LaravelSignPad\Tests;
+namespace Kaemmerlingit\LaravelSignPad\Tests;
 
-use Creagia\LaravelSignPad\LaravelSignPadServiceProvider;
+use Kaemmerlingit\LaravelSignPad\LaravelSignPadServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Creagia\\LaravelSignPad\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Kaemmerlingit\\LaravelSignPad\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

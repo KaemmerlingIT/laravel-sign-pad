@@ -1,14 +1,14 @@
 <?php
 
-namespace Creagia\LaravelSignPad\Concerns;
+namespace Kaemmerlingit\LaravelSignPad\Concerns;
 
-use Creagia\LaravelSignPad\Signature;
+use Kaemmerlingit\LaravelSignPad\Signature;
 
 trait RequiresSignature
 {
-    public function signature()
+    public function signatures()
     {
-        return $this->morphOne(Signature::class, 'model');
+        return $this->morphMany(Signature::class, 'model');
     }
 
     public function getSignatureRoute(): string
@@ -16,17 +16,17 @@ trait RequiresSignature
         return route('sign-pad::signature', [
             'model' => get_class($this),
             'id' => $this->id,
-            'token' => md5(config('app.key').get_class($this)),
+            'token' => md5(config('app.key') . get_class($this)),
         ]);
     }
 
-    public function hasBeenSigned(): bool
+    public function hasBeenSigned(?string $part): bool
     {
-        return ! is_null($this->signature);
+        return $this->signatures()->part($part)->count() > 0;
     }
 
-    public function deleteSignature(): bool
+    public function deleteSignaturesInPart(?string $part): bool
     {
-        return $this->signature?->delete() ?? false;
+        return $this->signatures()->part($part)->delete();
     }
 }

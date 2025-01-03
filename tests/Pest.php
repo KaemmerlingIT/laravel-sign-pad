@@ -1,5 +1,5 @@
 <?php
 
-use Creagia\LaravelSignPad\Tests\TestCase;
+use Kaemmerlingit\LaravelSignPad\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

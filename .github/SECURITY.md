@@ -1,3 +1,3 @@
 # Security Policy
 
-If you discover any security related issues, please email david@creagia.com instead of using the issue tracker.
+If you discover any security related issues, please email david@Kaemmerlingit.com instead of using the issue tracker.

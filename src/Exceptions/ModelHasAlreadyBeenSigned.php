@@ -1,6 +1,6 @@
 <?php
 
-namespace Creagia\LaravelSignPad\Exceptions;
+namespace Kaemmerlingit\LaravelSignPad\Exceptions;
 
 use Exception;
 

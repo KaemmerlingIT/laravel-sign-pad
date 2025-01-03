@@ -1,6 +1,6 @@
 <?php
 
-namespace Creagia\LaravelSignPad\Components;
+namespace Kaemmerlingit\LaravelSignPad\Components;
 
 use Illuminate\View\Component;
 
@@ -22,21 +22,25 @@ class SignaturePad extends Component
 
     public bool $disabledWithoutSignature;
 
+    public ?string $part;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
     public function __construct(
-        ?float $width = null,
-        ?float $height = null,
-        string $padClasses = '',
-        string $buttonClasses = '',
-        string $borderColor = '#777777',
-        string $submitName = 'Submit',
-        string $clearName = 'Clear',
-        bool $disabledWithoutSignature = false
-    ) {
+        ?float  $width = null,
+        ?float  $height = null,
+        string  $padClasses = '',
+        string  $buttonClasses = '',
+        string  $borderColor = '#777777',
+        string  $submitName = 'Submit',
+        string  $clearName = 'Clear',
+        bool    $disabledWithoutSignature = false,
+        ?string $part = null,
+    )
+    {
         $this->width = $width ?? config('sign-pad.width');
         $this->height = $height ?? config('sign-pad.height');
 
@@ -49,6 +53,7 @@ class SignaturePad extends Component
         $this->clearName = $clearName;
 
         $this->disabledWithoutSignature = $disabledWithoutSignature;
+        $this->part = $part;
     }
 
     /**

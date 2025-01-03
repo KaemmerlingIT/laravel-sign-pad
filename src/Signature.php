@@ -1,9 +1,10 @@
 <?php
 
-namespace Creagia\LaravelSignPad;
+namespace Kaemmerlingit\LaravelSignPad;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
 
 /**
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Storage;
  * @property string $model_id
  * @property string $model_type
  * @property array $from_ips
+ * @property ?string $part
  */
 class Signature extends Model
 {
@@ -33,7 +35,7 @@ class Signature extends Model
         'filename',
         'document_filename',
         'from_ips',
-        'certified',
+        'part'
     ];
 
     /**
@@ -41,7 +43,6 @@ class Signature extends Model
      */
     protected $casts = [
         'from_ips' => 'array',
-        'certified' => 'boolean',
     ];
 
     /**
@@ -52,25 +53,27 @@ class Signature extends Model
         return $this->morphTo();
     }
 
+    public function scopePart($query, $part)
+    {
+        return $query->where('part', $part);
+    }
+
     public function getSignatureImagePath(): string
     {
-        return config('sign-pad.signatures_path').'/'.$this->attributes['filename'];
+        return config('sign-pad.signatures_path') . '/' . $this->attributes['filename'];
     }
 
     public function getSignatureImageAbsolutePath(): string
     {
-        return Storage::disk(config('sign-pad.disk_name'))->path(config('sign-pad.signatures_path').'/'.$this->attributes['filename']);
+        return Storage::disk(config('sign-pad.disk_name'))->path(config('sign-pad.signatures_path') . '/' . $this->attributes['filename']);
     }
 
-    public function getSignedDocumentPath(): ?string
+    public function getSignatureImageContent(): string
     {
-        return $this->attributes['document_filename'] ? config('sign-pad.documents_path').'/'.$this->attributes['document_filename'] : null;
-    }
-
-    public function getSignedDocumentAbsolutePath(): ?string
-    {
-        return $this->attributes['document_filename']
-            ? Storage::disk(config('sign-pad.disk_name'))->path(config('sign-pad.documents_path').'/'.$this->attributes['document_filename'])
-            : null;
+        $content = Storage::disk(config('sign-pad.disk_name'))->get($this->getSignatureImagePath());
+        if (config('sign-pad.encrypt_files') === true) {
+            return Crypt::decryptString($content);
+        }
+        return $content;
     }
 }

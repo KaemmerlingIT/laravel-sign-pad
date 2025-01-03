@@ -9,19 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creagia/laravel-sign-pad.git"
+    "url": "git+https://github.com/Kaemmerlingit/laravel-sign-pad.git"
   },
   "keywords": [
     "laravel",
     "sign",
     "pad"
   ],
-  "author": "Creagia",
+  "author": "Kaemmerlingit",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/creagia/laravel-sign-pad/issues"
+    "url": "https://github.com/Kaemmerlingit/laravel-sign-pad/issues"
   },
-  "homepage": "https://github.com/creagia/laravel-sign-pad#readme",
+  "homepage": "https://github.com/Kaemmerlingit/laravel-sign-pad#readme",
   "dependencies": {
     "signature_pad": "^4.0.0"
   },

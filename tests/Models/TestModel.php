@@ -1,9 +1,9 @@
 <?php
 
-namespace Creagia\LaravelSignPad\Tests\Models;
+namespace Kaemmerlingit\LaravelSignPad\Tests\Models;
 
-use Creagia\LaravelSignPad\Concerns\RequiresSignature;
-use Creagia\LaravelSignPad\Contracts\CanBeSigned;
+use Kaemmerlingit\LaravelSignPad\Concerns\RequiresSignature;
+use Kaemmerlingit\LaravelSignPad\Contracts\CanBeSigned;
 use Illuminate\Database\Eloquent\Model;
 
 class TestModel extends Model implements CanBeSigned

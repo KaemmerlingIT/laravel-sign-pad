@@ -1,6 +1,6 @@
 <?php
 
-use Creagia\LaravelSignPad\Components\SignaturePad;
+use Kaemmerlingit\LaravelSignPad\Components\SignaturePad;
 
 it('has default component values', function () {
     $signPadComponent = new SignaturePad;

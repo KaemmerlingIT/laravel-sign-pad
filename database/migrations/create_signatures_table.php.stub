@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('uuid');
             $table->string('filename');
             $table->string('document_filename')->nullable();
-            $table->boolean('certified')->default(false);
             $table->json('from_ips')->nullable();
+            $table->string('part')->nullable();
             $table->timestamps();
         });
     }
